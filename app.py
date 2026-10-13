@@ -31,6 +31,12 @@ def get_product(product_id):
 
     return jsonify({"error": "Product not found"}), 404
 
+@app.route("/api/info", methods=["GET"])
+def api_info():
+    return jsonify({
+        "application": "Flask Products API",
+        "version": "1.0"
+    })
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
