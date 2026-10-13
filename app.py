@@ -38,5 +38,9 @@ def api_info():
         "version": "1.0"
     })
 
+@app.route("/api/products/count", methods=["GET"])
+def get_product_count():
+    return jsonify({"count": len(products)})
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
